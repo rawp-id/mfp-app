@@ -13,11 +13,13 @@ class CryptoController extends Controller
     {
         $this->CryptoService = $tickerService;
     }
+    
     public function index()
     {
         $Data = $this->CryptoService->getCrypto();
         return response()->json(['success' => true, 'data' => $Data]);
     }
+
     public function indexView()
     {
         $Data = $this->CryptoService->getCrypto();
